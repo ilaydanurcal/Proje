@@ -1,0 +1,237 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+  text-decoration: none;
+  outline: 0;
+}
+/*
+ rem?
+ gap?
+ em?
+ rem em farkı
+ neden var 
+ ne işe yarar 
+ responsive bozan etkenler
+ flex yapısında esnekliği neler bozar?
+ 
+*/
+html,
+body {
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.chat {
+  height: 100%;
+  display: flex;
+}
+
+.chat .sidebar {
+  height: 100%;
+  width: 18.75em;
+  min-width: 18.75em;
+  background: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+}
+.chat .sidebar .search {
+  height: 2em;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  padding: 10px 10px 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: inherit;
+}
+.chat .sidebar .search input {
+  width: 100%;
+  height: 2em;
+  background: #fff;
+  border-radius: 20px;
+  font-size: 13px;
+  padding-left: 10px;
+}
+.chat .sidebar .search i {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2em;
+  height: 3.5em;
+  display: flex;
+  padding-right: 3px;
+  align-items: center;
+  font-size: 13px;
+  color: #999;
+}
+.chat .sidebar .contacts {
+  overflow: auto;
+  flex: 1;
+}
+.chat .sidebar .contacts div a {
+  display: flex;
+  height: 3.8em;
+  padding: 0 10px;
+  align-items: center;
+}
+.chat .sidebar .contacts div .active,
+.chat .sidebar .contacts div a:hover {
+  background: white;
+}
+.chat .sidebar .contacts div a:hover {
+  background: white;
+}
+.chat .sidebar .contacts div a img {
+  width: 2.1em;
+  height: 2.1em;
+  border-radius: 40px;
+  margin-right: 10px;
+}
+.chat .sidebar .contacts div a .contact .name {
+  font-size: 15px;
+  font-weight: 500;
+  color: rgb(34, 34, 34);
+  margin-bottom: 2px;
+}
+.chat .sidebar .contacts div a .contact .text {
+  font-size: 14px;
+  color: #999;
+}
+.chat .sidebar .contacts div a .notice {
+  background: red;
+  border-radius: 50%;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 12px;
+  text-align: center;
+  color: white;
+  line-height: 1.6em;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chat .content {
+  flex: 1;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+.chat .content .message-header {
+  border-bottom: 1px solid #ddd;
+  height: 3.25em;
+  min-height: 3.25em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+.chat .content .message-header .user-info {
+  display: flex;
+  align-items: center;
+}
+.chat .content .message-header .user-info img {
+  width: 2em;
+  height: 2em;
+  margin-right: 0.75em;
+  border-radius: 50%;
+}
+.chat .content .message-header .user-info .user .name {
+  font-size: 15px;
+  font-weight: 500;
+  color: #222;
+}
+.chat .content .message-header .user-info .user .time {
+  font-size: 13px;
+  color: #999;
+}
+.turtle {
+  display: flex;
+  gap: 10px;
+}
+.chat .content .message-header .actions div a {
+  font-size: 18px;
+  color: #999;
+  text-align: center;
+}
+.chat .content .message-header .actions div a:hover {
+  color: #222;
+}
+
+.chat .content .message-form {
+  border-top: 1px solid #ddd;
+  background: #eee;
+  padding: 2px 5px;
+}
+.chat .content .message-form div {
+  display: flex;
+  margin: 2px 5px;
+}
+.chat .content .message-form div.input {
+  flex: 1;
+  margin: 2px;
+}
+.chat .content .message-form div.input input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 36px;
+  border: 1px solid #ddd;
+  border-radius: 36px;
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+.chat .content .message-form div a {
+  width: 36px;
+  height: 36px;
+  display: block;
+  border-radius: 50%;
+  background: #333;
+  color: #fff;
+  text-align: center;
+  line-height: 36px;
+}
+.chat .content .message-form div.laugh a {
+  background: #339af0;
+}
+.chat .content .message-form div.microphone a {
+  background: #ff5722;
+}
+.chat .content .message-form div.image-icon a {
+  background: #4caf50;
+}
+.chat .content .message-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  overflow: auto;
+}
+.chat .content .message-content::before {
+  content: "";
+  margin-bottom: auto;
+}
+.chat .content .message-content .message {
+  align-self: flex-start;
+}
+.chat .content .message-content .message .bubble {
+  padding: 6px 12px;
+  background: #f7f7f7;
+  border-radius: 20px;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.chat .content .message-content .message .time {
+  font-size: 10px;
+  color: #999;
+}
+.chat .content .message-content .message.me {
+  align-self: flex-end;
+}
+.chat .content .message-content .message.me .bubble {
+  background: #339af0;
+  color: #fff;
+}
+.chat .content .message-content .message.me .time {
+  text-align: right;
+}
